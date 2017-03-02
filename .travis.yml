@@ -4,8 +4,3 @@ language: rust
 rust:
   - nightly
 
-script:
-  - |
-      travis-cargo build &&
-      travis-cargo test
-
