@@ -58,7 +58,6 @@ impl MutableTime for Time {
         loop {
             if hour_delta >= 24 {
                 hour_delta -= 24;
-                println!("{}", hour_delta);
             } else {
                 break;
             }
