@@ -55,7 +55,15 @@ trait MutableTime {
 
 impl MutableTime for Time {
     fn add_minutes(&mut self, minutes: i32) {
-        let hour_delta = minutes / 60;
+        let mut hour_delta = minutes / 60;
+        loop {
+            if hour_delta >= 24 {
+                hour_delta -= 24;
+                println!("{}", hour_delta);
+            } else {
+                break;
+            }
+        }
         self.hour += hour_delta;
 
         let minute_delta = minutes % 60;

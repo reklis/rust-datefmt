@@ -3,7 +3,7 @@ extern crate datefmt;
 #[test]
 #[should_panic]
 fn bad_date() {
-    let r = datefmt::add_minutes("foo", 10);
+    datefmt::add_minutes("foo", 10);
 }
 
 #[test]
@@ -22,6 +22,18 @@ fn add_one_hour() {
 fn add_six_hours() {
     let r = datefmt::add_minutes("9:13 AM", 60 * 6);
     assert_eq!(r, "3:13 PM");
+}
+
+#[test]
+fn add_one_day() {
+    let r = datefmt::add_minutes("9:13 AM", 60 * 24);
+    assert_eq!(r, "9:13 AM");
+}
+
+#[test]
+fn add_one_day_two_hours_one_minute() {
+    let r = datefmt::add_minutes("9:13 AM", 60 * 24 + 60 * 2 + 1);
+    assert_eq!(r, "11:14 AM");
 }
 
 #[test]
