@@ -10,7 +10,6 @@ impl Time {
         let separators: &[char] = &[':', ' '];
         let mut tokens = date_string.split(separators);
 
-        //println!("{}", tokens.next().unwrap());
         let mut hours = tokens.next().unwrap().parse::<i32>()
             .expect("failed to parse hours");
         let minutes = tokens.next().unwrap().parse::<i32>()
