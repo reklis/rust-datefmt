@@ -1,0 +1,6 @@
+[package]
+name = "datefmt"
+version = "0.1.0"
+authors = ["sfusco <sfusco@ricin.local>"]
+
+[dependencies]
